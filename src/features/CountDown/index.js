@@ -1,5 +1,5 @@
 import React from 'react';
-import CountDownPage from './pages/CoundDownPage';
+import CountDownPage from './pages/CountDownPage';
 
 CountDown.propTypes = {
     

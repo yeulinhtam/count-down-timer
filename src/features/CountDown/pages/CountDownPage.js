@@ -1,14 +1,14 @@
 import React from 'react';
 import Clock from './../components/Clock';
 
-CoundDownPage.propTypes = {
+CountDownPage.propTypes = {
     
 };
 
-function CoundDownPage() {
+function CountDownPage() {
     return (
         <Clock />
     );
 }
 
-export default CoundDownPage;
+export default CountDownPage;
