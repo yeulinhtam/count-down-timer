@@ -10,14 +10,16 @@ function formatDateTime() {
     const date = new Date();
 
     let countDownDate = new Date(date.getUTCFullYear() + 1 + "").getTime();
-    let offset = date.getTimezoneOffset();
+
+    // Time zone
+    let offset = date.getTimezoneOffset() * 60 * 1000;
     let now = date.getTime();
 
-    var distance = countDownDate  - now;
+    var distance = countDownDate + offset - now;
 
     // Time calculations for days, hours, minutes and seconds
     var days = `0${Math.floor(distance / (1000 * 60 * 60 * 24))}`.slice(-2);
-    var hours = `0${Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)) + offset/60}`.slice(-2);
+    var hours = `0${Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))}`.slice(-2);
     var minutes = `0${Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))}`.slice(-2);
     var seconds = `0${Math.floor((distance % (1000 * 60)) / 1000)}`.slice(-2);
     return {
